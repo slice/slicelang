@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const file = process.argv[2]
+
+if (!file) {
+  console.error('usage: lispy.js <file>')
+  process.exit(1)
+}
+
+const tokenizer = require('../lib/tokenizer')
+const parser = require('../lib/parser')
+const transpiler = require('../lib/transpiler')
+const runtime = require('../lib/runtime')
+
+const tokens = tokenizer(fs.readFileSync(file, 'utf8'))
+const ast = parser(tokens)
+const compiled = runtime.node + transpiler(ast)
+console.log(compiled)

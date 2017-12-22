@@ -1,0 +1,14 @@
+{
+  "name": "slicelang",
+  "version": "0.0.0",
+  "description": "a terrible thing",
+  "bin": {
+    "sl": "./bin/sl"
+  },
+  "keywords": [
+    "lisp",
+    "programming language"
+  ],
+  "author": "slice <ryaneft@gmail.com>",
+  "license": "MIT"
+}
