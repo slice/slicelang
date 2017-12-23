@@ -4,13 +4,12 @@
 (defn handle [handler] (bot.on "message" handler))
 
 (def dab "<:dab:382739025582096384>")
-(defn handler [message]
+(handle (fn [message]
   (if (or (ne message.channel.id "366746609041801227") (eq message.author.id "388961752685084672"))
     (ret)
   )
   (if (eq message.content "paw, dab on me")
     (message.reply (add (add dab " your user id is ") message.author.id))
   )
-)
-(handle handler)
+))
 (run (slurp "token.txt"))
