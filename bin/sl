@@ -12,6 +12,14 @@ const tokenizer = require('../lib/tokenizer')
 const parser = require('../lib/parser')
 const transpiler = require('../lib/transpiler')
 const runtime = require('../lib/runtime')
+const { inspect } = require('util')
+
+if (file === 'parse') {
+  const tokens = tokenizer(fs.readFileSync(process.argv[3], 'utf8'))
+  const ast = parser(tokens)
+  console.log(inspect(ast, { depth: null, maxArrayLength: Infinity }))
+  process.exit(0)
+}
 
 const tokens = tokenizer(fs.readFileSync(file, 'utf8'))
 const ast = parser(tokens)
