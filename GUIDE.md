@@ -104,6 +104,29 @@ function my_function(a, b) {
 }
 ```
 
+## Function Expressions (lambdas/arrow functions)
+
+Instead of defining functions, you can use a function as an expression, with the
+special `fn` function:
+
+```
+(defn factory []
+  (ret (fn []
+    (log "hello")
+  ))
+)
+```
+
+This compiles to an ES2015 arrow function:
+
+```js
+function factory() {
+  return () => {
+    log('hello')
+  }
+}
+```
+
 ### Returning Values
 
 TODO
