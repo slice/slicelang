@@ -10,5 +10,6 @@
     "programming language"
   ],
   "author": "slice <ryaneft@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
