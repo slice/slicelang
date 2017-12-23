@@ -17,6 +17,16 @@ For fun. Do not actually use this.
 
 :(
 
+## Installing
+
+```sh
+$ npm i -g slice/slicelang
+# Compile a file:
+$ sl my_script.sl > my_script.js
+# Then run it!
+$ node my_script.js
+```
+
 ## Calling Functions
 
 Nearly everything in slicelang is a function. To call functions, supply the name
