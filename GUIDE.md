@@ -1,13 +1,13 @@
 # slicelang
 
-slicelang is a "programming language" that compiles to JavaScript. Its syntax
+slicelang is a "programming language" that transpiles to JavaScript. Its syntax
 is similar to Lisp, but the syntaxes are only identical in that it both uses
 a heavy amount of parentheses. Actual business logic uses very different syntax
 than Lisp.
 
 It is appropriate to call it "JavaScript but kinda like Lisp, and worse."
 
-The reference compiler is written in JavaScript.
+The reference transpiler is written in JavaScript.
 
 ## But...why?
 
@@ -32,7 +32,7 @@ my_function_name(first_argument, second_argument)
 
 ## Lists (Arrays)
 
-You can indicate lists of values (compiles to arrays) with consecutive values
+You can indicate lists of values (transpiles to arrays) with consecutive values
 surrounded by square brackets.
 
 Commas are optional, but can be included if you prefer. The recommended choice
@@ -117,7 +117,7 @@ special `fn` function:
 )
 ```
 
-This compiles to an ES2015 arrow function:
+This transpiles to an ES2015 arrow function:
 
 ```js
 function factory() {
@@ -136,25 +136,25 @@ TODO
 slicelang is terrible and has no concept of operators whatsoever. Almost
 everything is a function, including operators.
 
-| JavaScript Operator | SL Function |   Example    | Compiled Output |
-| :-----------------: | :---------: | :----------: | :-------------: |
-|         `+`         |    `add`    | `(add 1 2)`  |     `1 + 2`     |
-|         `-`         |    `sub`    | `(sub 1 2)`  |     `1 - 2`     |
-|         `*`         |    `mul`    | `(mul 1 2)`  |     `1 * 2`     |
-|         `/`         |    `div`    | `(div 1 2)`  |     `1 / 2`     |
-|         `%`         |    `mod`    | `(mod 1 2)`  |     `1 % 2`     |
-|        `+=`         |   `adef`    | `(adef n 2)` |    `n += 2`     |
-|        `-=`         |   `sdef`    | `(sdef n 2)` |    `n -= 2`     |
-|        `===`        |    `eq`     |  `(eq 1 2)`  |    `1 === 2`    |
-|        `==`         |    `leq`    | `(leq 1 2)`  |    `1 == 2`     |
-|        `!==`        |    `ne`     |  `(ne 1 2)`  |    `1 !== 2`    |
-|        `!=`         |    `lne`    | `(lne 1 2)`  |    `1 != 2`     |
-|         `<`         |    `lt`     |  `(lt 1 2)`  |     `1 < 2`     |
-|         `>`         |    `gt`     |  `(gt 1 2)`  |     `1 > 2`     |
-|        `<=`         |    `le`     |  `(le 1 2)`  |    `1 <= 2`     |
-|        `>=`         |    `ge`     |  `(ge 1 2)`  |    `1 >= 2`     |
-|       `\|\|`        |    `or`     |  `(or 1 2)`  |   `1 \|\| 2`    |
-|        `&&`         |    `and`    | `(and 1 2)`  |    `1 && 2`     |
+| JavaScript Operator | SL Function |   Example    | Transpiled Output |
+| :-----------------: | :---------: | :----------: | :---------------: |
+|         `+`         |    `add`    | `(add 1 2)`  |      `1 + 2`      |
+|         `-`         |    `sub`    | `(sub 1 2)`  |      `1 - 2`      |
+|         `*`         |    `mul`    | `(mul 1 2)`  |      `1 * 2`      |
+|         `/`         |    `div`    | `(div 1 2)`  |      `1 / 2`      |
+|         `%`         |    `mod`    | `(mod 1 2)`  |      `1 % 2`      |
+|        `+=`         |   `adef`    | `(adef n 2)` |     `n += 2`      |
+|        `-=`         |   `sdef`    | `(sdef n 2)` |     `n -= 2`      |
+|        `===`        |    `eq`     |  `(eq 1 2)`  |     `1 === 2`     |
+|        `==`         |    `leq`    | `(leq 1 2)`  |     `1 == 2`      |
+|        `!==`        |    `ne`     |  `(ne 1 2)`  |     `1 !== 2`     |
+|        `!=`         |    `lne`    | `(lne 1 2)`  |     `1 != 2`      |
+|         `<`         |    `lt`     |  `(lt 1 2)`  |      `1 < 2`      |
+|         `>`         |    `gt`     |  `(gt 1 2)`  |      `1 > 2`      |
+|        `<=`         |    `le`     |  `(le 1 2)`  |     `1 <= 2`      |
+|        `>=`         |    `ge`     |  `(ge 1 2)`  |     `1 >= 2`      |
+|       `\|\|`        |    `or`     |  `(or 1 2)`  |    `1 \|\| 2`     |
+|        `&&`         |    `and`    | `(and 1 2)`  |     `1 && 2`      |
 
 ```
 (add (add 1 2) 3)
@@ -210,7 +210,7 @@ Hello! 4
 
 ### `for of`/`foreach`
 
-The special `fore` function compiles down to `for (... of ...)`.
+The special `fore` function transpiles down to `for (... of ...)`.
 
 ```
 (def string "Hello, world!")
